@@ -1,18 +1,19 @@
 {
   "name": "my-app",
+  "homepage": "https://asherdawson.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.0.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "rm -r build && npm run build && cd build/ && aws s3 sync . s3://anabram.com --acl public-read && cd .."
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
